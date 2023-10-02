@@ -11,3 +11,19 @@ body {
 h1 {
     text-align: center;
 }
+
+.welcome__container {
+    background-color: green;
+}
+
+.game__container {
+    background-color: orange;
+}
+
+.results__container {
+    background-color: purple;
+}
+
+.hide {
+    display: none;
+}
