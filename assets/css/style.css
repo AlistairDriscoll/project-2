@@ -1,29 +1,24 @@
 body {
-    background-color: orange;
-}
-
-#test {
-    height: 200px;
-    width: 200px;
-    background-color:green;
+  background-color: darkmagenta;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+  background: url("../images/the-enterprise.jpeg");
 }
 
 .welcome__container {
-    background-color: green;
+  background-color: green;
 }
 
 .game__container {
-    background-color: orange;
+  background-color: orange;
 }
 
 .results__container {
-    background-color: purple;
+  background-color: purple;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
