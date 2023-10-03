@@ -12,3 +12,64 @@ const showGame = function () {
 };
 
 startGameBtn.addEventListener("click", showGame);
+
+function compareChoices(op1, op2) {
+    if (op1 === op2) {
+        result = 'draw';
+
+    } else if (op1 = 'rock') {
+        if (op2 = 'paper') {
+            playerTwo++;
+        } else if (op2 = 'scissors') {
+            playerOne++;
+        } else if (op2 = 'lizard') {
+            playerOne++;
+        } else {
+            playerTwo++;
+        }
+
+    } else if (op1 = 'paper') {
+        if (op2 = 'rock') {
+            playerOne++;
+        } else if (op2 = 'scissors') {
+            playerTwo++;
+        } else if (op2 = 'lizard') {
+            playerTwo++;
+        } else {
+            playerOne++;
+        }
+
+    } else if (op1 = 'scissors') {
+        if (op2 = 'rock') {
+            playerTwo++;
+        } else if (op2 = 'paper') {
+            playerOne++;
+        } else if (op2 = 'lizard') {
+            playerOne++;
+        } else {
+            playerTwo++;
+        }
+
+    } else if (op1 = 'lizard') {
+        if (op2 = 'rock') {
+            playerTwo++;
+        } else if (op2 = 'paper') {
+            playerOne++;
+        } else if (op2 = 'scissors') {
+            playerTwo++;
+        } else {
+            playerOne++;
+        }
+
+    } else {
+        if (op2 = 'rock') {
+            playerOne++;
+        } else if (op2 = 'paper') {
+            playerTwo++;
+        } else if (op2 = 'scissors') {
+            playerOne++;
+        } else {
+            playerTwo++;
+        }
+    }
+}
