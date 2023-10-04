@@ -1,4 +1,4 @@
-console.log("whats going on here then");
+console.log("will my css load good sirs");
 const welcomeContainer = document.getElementById("welcome-container");
 const gameContainer = document.getElementById("game-container");
 const resultsContainer = document.getElementById("results-container");

@@ -1,13 +1,14 @@
-body {
-    background-color: darkmagenta;
-}
+@import url('https://www.fontspace.com/paladins-font-f32777')
 
-header {
-    background-image: url("../images/the-enterprise.jpeg");
+body {
+    background: black, url('../assets/images/space-background.png');
+    á
 }
 
 h1 {
     text-align: center;
+    font-family: 'paladins', arial, sans serif;
+    color: white;
 }
 
 .welcome__container {
