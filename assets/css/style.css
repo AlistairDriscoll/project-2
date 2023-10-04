@@ -1,27 +1,27 @@
 body {
-  background-color: darkmagenta;
+    background-color: darkmagenta;
 }
 
 header {
-  background-image: url("../images/the-enterprise.jpeg");
+    background-image: url("../images/the-enterprise.jpeg");
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 .welcome__container {
-  background-color: green;
+    background-color: green;
 }
 
 .game__container {
-  background-color: orange;
+    background-color: orange;
 }
 
 .results__container {
-  background-color: purple;
+    background-color: purple;
 }
 
 .hide {
-  display: none;
+    display: none;
 }
