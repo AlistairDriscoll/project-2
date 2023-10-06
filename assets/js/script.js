@@ -16,19 +16,34 @@ const showGame = function () {
 
 startGameBtn.addEventListener("click", showGame);
 
-//function to see whick player wins
+//function to see which player wins
+
+let choices = {0: 'rock', 1: 'paper', 2: 'scissors', 3: 'lizard', 4: 'spock'}
+
+function gameFunction(playerMove) {
+  let ranNum = Math.random() * 5;
+  let compMove = Math.floor (ranNum);
+  console.log(choices[playerMove])
+  let compChoice = choices[compMove];
+  let playerChoice = choices[playerMove];
+  console.log(compChoice);
+  let result = compareChoices(playerChoice, compChoice);
+  console.log(result)
+}
+
 function compareChoices(op1, op2) {
-  if (op1 === op2) {
-    result = "draw";
-  } else if ((op1 = "rock")) {
-    if ((op2 = "paper")) {
-      playerTwo++;
-    } else if ((op2 = "scissors")) {
-      playerOne++;
-    } else if ((op2 = "lizard")) {
-      playerOne++;
+  console.log(op1, op2)
+  if (op1 == op2) {
+    return "draw";
+  } else if ((op1 == "rock")) {
+    if ((op2 == "paper")) {
+      return "loss"
+    } else if ((op2 == "scissors")) {
+      return "win";
+    } else if ((op2 == "lizard")) {
+      return "win";
     } else {
-      playerTwo++;
+      return "loss";
     }
   } else if ((op1 = "paper")) {
     if ((op2 = "rock")) {
@@ -74,9 +89,15 @@ function compareChoices(op1, op2) {
 }
 
 
-  let options1 = document.getElementsByClassName('player1-buttons');
+  let options = document.getElementsByClassName('choices');
   for (let i = 0; i < options.length; i++) {
-      options[i].addEventListener('click', )
+    function eachOption() {
+      gameFunction(i)
+    }
+      options[i].addEventListener('click', eachOption)
+      let playerMove = options[i]
+      
+      
   }
 
 

@@ -2,64 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-    <title>Rock Paper Scissors Lizard Spock</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <title>Rock Paper Scissors Lizard Spock</title>
 </head>
 
 <body>
-    <header>
-        <h1>Rock. Paper. Scissors. Lizard. Spock!</h1>
-    </header>
-<br>
+  <header>
+    <h1>Rock. Paper. Scissors. Lizard. Spock!</h1>
+  </header>
+  <br>
 
-    <main class="center__column">
-        <section id="welcome-container" class="welcome__container">
-            <h2>Welcome!</h2>
-            <p>
-                ...to Rock Paper Scissors Lizard Spock. A game where you choose
-                between 5 different fighting options to best your opponent. Each
-                option comes with its own qualities and abilities that can either best
-                or be bested by the other four options. The different options along
-                with the rules they follow are set below. Every time a round is won,
-                either the player or the computer gains a point. The first to win three points
-                is the overall winner of the game. If the same option is chosen by both player 
-                and computer then it is a draw, and no points are awarded. May the best player win!
-            </p>
-            <h3>Here is a visual idea of how the game works:</h3>
-            <img src="imgs/RockPaperScissorsLizardSpock-bestpic.jpg" alt="Visual representation of the rules" class="round-corners"/>
-            
-            <h3>
-                When you think you're familiar with the rules, enter your names in the input boxes below and press the button to start a game!
-            </h3>
+  <main class="center__column">
+    <section id="welcome-container" class="welcome__container">
+      <h2>Welcome!</h2>
+      <p>
+        ...to Rock Paper Scissors Lizard Spock. A game where you choose
+        between 5 different fighting options to best your opponent. Each
+        option comes with its own qualities and abilities that can either best
+        or be bested by the other four options. The different options along
+        with the rules they follow are set below. Every time a round is won,
+        either the player or the computer gains a point. The first to win three points
+        is the overall winner of the game. If the same option is chosen by both player
+        and computer then it is a draw, and no points are awarded. May the best player win!
+      </p>
+      <h3>Here is a visual idea of how the game works:</h3>
+      <img src="assets/images/RockPaperScissorsLizardSpock-bestpic.jpg" alt="Visual representation of the rules"
+        class="round-corners" />
 
-            <button id="start-game-btn">Start Game</button>
-        </section>
 
-        <section id="game-container" class="game__container hide">
+      <!--TODO: REMEMBER TO FIX LINKS!!!!!!!!!!!!-->
 
-            <h2 id="scores-h"></h2>
-            <div id="player1-div">
-                <h3>PTake Your Go:</h3>
-                <button class="choices">Rock</button>
-                <button class="choices">Paper</button>
-                <button class="choices">Scissors</button>
-                <button class="choices">Lizard</button>
-                <button class="choices">Spock</button>
-            </div>
-        </section>
 
-        <section id="results-container" class="results__container hide">
-            <button id="back-to-home-btn">Back to menu</button>
-        </section>
-    </main>
-    <footer></footer>
-    <script src="script.js"></script>
+      <h3>
+        When you think you're familiar with the rules, enter your names in the input boxes below and press the button to
+        start a game!
+      </h3>
+
+      <button id="start-game-btn">Start Game</button>
+    </section>
+
+    <section id="game-container" class="game__container hide">
+
+      <h2 id="scores-h"></h2>
+      <div id="player1-div">
+        <h3>Take Your Go:</h3>
+        <button class="choices">Rock</button>
+        <button class="choices">Paper</button>
+        <button class="choices">Scissors</button>
+        <button class="choices">Lizard</button>
+        <button class="choices">Spock</button>
+      </div>
+    </section>
+
+    <section id="results-container" class="results__container hide">
+      <button id="back-to-home-btn">Back to menu</button>
+    </section>
+  </main>
+  <footer></footer>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
