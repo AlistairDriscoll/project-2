@@ -1,9 +1,12 @@
-console.log("will my css load good sirs");
+console.log("car bonnet");
 const welcomeContainer = document.getElementById("welcome-container");
 const gameContainer = document.getElementById("game-container");
 const resultsContainer = document.getElementById("results-container");
 const startGameBtn = document.getElementById("start-game-btn");
 const backToHomeBtn = document.getElementById("back-to-home-btn");
+
+let playerOne = 0
+let playerTwo = 0
 
 const showGame = function () {
   console.log("button start was clicked");
@@ -13,6 +16,7 @@ const showGame = function () {
 
 startGameBtn.addEventListener("click", showGame);
 
+//function to see whick player wins
 function compareChoices(op1, op2) {
   if (op1 === op2) {
     result = "draw";
@@ -56,7 +60,7 @@ function compareChoices(op1, op2) {
     } else {
       playerOne++;
     }
-  } else {
+  } else if (op1 = 'spock') {
     if ((op2 = "rock")) {
       playerOne++;
     } else if ((op2 = "paper")) {
@@ -68,3 +72,18 @@ function compareChoices(op1, op2) {
     }
   }
 }
+
+
+  let options1 = document.getElementsByClassName('player1-buttons');
+  for (let i = 0; i < options.length; i++) {
+      options[i].addEventListener('click', )
+  }
+
+
+let scores = document.getElementById('scores-h');
+scores.innerHTML = `
+    <p>
+        Player One ${playerOne} : ${playerTwo} Player Two
+    </p>
+`
+let op1 = getOption1();
