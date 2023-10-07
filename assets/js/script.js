@@ -12,12 +12,10 @@ let choices = {0: 'rock', 1: 'paper', 2: 'scissors', 3: 'lizard', 4: 'spock'}
 let result = "";
 let announcement = "";
 
-backToGameBtn.addEventListener("click", showGame);
-startGameBtn.addEventListener("click", showGame);
-
 /**
  * displays game section
  * hides welcome and results section
+ * sets result back to empty string
  */
 const showGame = function () {
   console.log("button start was clicked");
@@ -27,9 +25,29 @@ const showGame = function () {
   result = "";
 };
 
+/**
+ * displays welcome section
+ * hides game and results section
+ * sets result back to empty string
+ */
+const showHome = function () {
+  welcomeContainer.classList.remove("hide");
+  gameContainer.classList.add("hide");
+  resultsContainer.classList.add("hide");
+  result = "";
+}
 
 /**
- *
+ * event listeners to show the different sections
+ */
+backToGameBtn.addEventListener("click", showGame);
+startGameBtn.addEventListener("click", showGame);
+backToHomeBtn.addEventListener("click", showHome);
+
+/**
+ *gets computer to generate number between 0-4
+ *matches computer and players numbers with object to get the choices
+ *puts choices to comparison function and puts the results in the correct elements html
  */
 function gameFunction(playerMove) {
   let ranNum = Math.random() * 5;
@@ -45,90 +63,92 @@ function gameFunction(playerMove) {
   resultsContainer.classList.remove("hide");
   playerChoiceContainer.innerText = playerChoice;
   computerChoiceContainer.innerText = compChoice;
-}
 
+//compares all possible combinations, announces outcome and result
 function compareChoices(op1, op2) {
   let announce = "";
+  // analyse if results are the same
   if (op1 == op2) {
     announce = "It's a Draw!";
     return "draw", announce;
+    // analyse if player choice is rock
   } else if ((op1 == "rock")) {
     if ((op2 == "paper")) {
-      announce = "Paper wraps rock!";
-      announce = "Paper wraps rock!";
+      announce = "Paper wraps Rock!";
       return "loss", announce;
     } else if ((op2 == "scissors")) {
-      announce = "Rock crushes scissors!";
+      announce = "Rock crushes Scissors!";
       return "win", announce;
     } else if ((op2 == "lizard")) {
-      announce = "Rock crushes lizard!";
+      announce = "Rock crushes Lizard!";
       return "win", announce;
     } else {
-      announce = "Spock vaporises rock!";
-      announce = "Paper wraps rock!";
+      announce = "Spock vaporises Rock!";
       return "loss", announce;
     }
+    // analyse if player choice is paper
   } else if ((op1 = "paper")) {
     if ((op2 = "rock")) {
-      announce = "Rock crushes lizard!";
+      announce = "Paper wraps Rock!";
       return "win", announce;
     } else if ((op2 = "scissors")) {
-      announce = "Paper wraps rock!";
-      announce = "Paper wraps rock!";
+      announce = "Scissors cut Paper!!";
       return "loss", announce;
     } else if ((op2 = "lizard")) {
-      announce = "Paper wraps rock!";
-      return "loss", announce;;
+      announce = "Lizard eats Paper!";
+      return "loss", announce;
     } else {
-      announce = "Rock crushes lizard!";
+      announce = "Paper disproves Spock!";
       return "win", announce;
     }
+    // analyse if player choice is scissors
   } else if ((op1 = "scissors")) {
-    // analyse choices if scissors
     if ((op2 = "rock")) {
-      announce = "Paper wraps rock!";
-      return "loss", announce;;
+      announce = "Rock crushes Scissors!";
+      return "loss", announce;
     } else if ((op2 = "paper")) {
-      announce = "Rock crushes lizard!";
+      announce = "Scissors cut Paper!";
       return "win", announce;
     } else if ((op2 = "lizard")) {
-      announce = "Rock crushes lizard!";
+      announce = "Scissors decapitate Lizard!";
       return "win", announce;
     } else {
-      announce = "Paper wraps rock!";
+      announce = "Spock smashes Scissors!";
       return "loss", announce;;
     }
+    // analyse if player choice is lizard
   } else if ((op1 = "lizard")) {
     if ((op2 = "rock")) {
-      announce = "Paper wraps rock!";
-      return "loss", announce;;
+      announce = "Rock crushes Lizard!";
+      return "loss", announce;
     } else if ((op2 = "paper")) {
-      announce = "Rock crushes lizard!";
+      announce = "Lizard eats Paper!";
       return "win", announce;
     } else if ((op2 = "scissors")) {
-      announce = "Paper wraps rock!";
+      announce = "Scissors decapitate Lizard";
       return "loss", announce;;
     } else {
-      announce = "Rock crushes lizard!";
+      announce = "Lizard poisons Spock";
       return "win", announce;
     }
+    // analyse if player choice is spock
   } else if (op1 = 'spock') {
     if ((op2 = "rock")) {
-      announce = "Rock crushes lizard!";
+      announce = "Spock vaporises Rock!";
       return "win", announce;
     } else if ((op2 = "paper")) {
-      announce = "Paper wraps rock!";
-      return "loss", announce;;
+      announce = "Paper disproves Spock!";
+      return "loss", announce;
     } else if ((op2 = "scissors")) {
-      announce = "Rock crushes lizard!";
+      announce = "Spock smashes Scissors!";
       return "win", announce;
     } else {
-      announce = "Paper wraps rock!";
-      return "loss", announce;;
+      announce = "Lizard poisons Spock!";
+      return "loss", announce;
     }
   }
 }
-
+  // puts event listeners on each option button and sends result to the game function
   for (let i = 0; i < options.length; i++) {
     function eachOption() {
       gameFunction(i)
@@ -136,4 +156,4 @@ function compareChoices(op1, op2) {
       options[i].addEventListener('click', eachOption)
       let playerMove = options[i]
   }
-
+}
