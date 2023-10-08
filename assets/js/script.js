@@ -56,7 +56,6 @@ function gameFunction(playerMove) {
   let playerChoice = choices[playerMove];
   result, announcement = compareChoices(playerChoice, compChoice);
   console.log(announcement);
-  console.log(compChoice);
   console.log(result);
   resultsHeader.innerText = result;
   gameContainer.classList.add("hide");
