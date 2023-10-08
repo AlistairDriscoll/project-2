@@ -5,9 +5,10 @@ const startGameBtn = document.getElementById("start-game-btn");
 const backToHomeBtn = document.getElementById("back-to-home-btn");
 const resultsHeader = document.getElementById("results");
 const backToGameBtn = document.getElementById("back-to-game-btn");
-const playerChoiceContainer = document.getElementById('player-choice');
-const computerChoiceContainer = document.getElementById('computer-choice');
-const options = document.getElementsByClassName('choices');
+const playerChoiceContainer = document.getElementById("player-choice");
+const computerChoiceContainer = document.getElementById("computer-choice");
+const options = document.getElementsByClassName("choices");
+const footer = document.getElementById("footer");
 let choices = {0: 'rock', 1: 'paper', 2: 'scissors', 3: 'lizard', 4: 'spock'}
 let result = "";
 let announcement = "";
@@ -22,6 +23,7 @@ const showGame = function () {
   welcomeContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
+  footer.classList.add("position__absolute");
   result = "";
 };
 
@@ -34,7 +36,7 @@ const showHome = function () {
   welcomeContainer.classList.remove("hide");
   gameContainer.classList.add("hide");
   resultsContainer.classList.add("hide");
-  result = "";
+  footer.classList.remove('position__absolute');
 }
 
 /**

@@ -39,3 +39,12 @@ button {
 section {
     max-width: 750px;
 }
+
+/*css for footer with added class to make sure it is always on the bottom*/
+footer {
+    bottom: 0;
+    width: 100%;
+}
+.position__absolute {
+    position: absolute;
+}
