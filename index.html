@@ -5,13 +5,16 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rock Paper Scissors Lizard Spock">
-  <meta name="keywords" content="Rock Paper Scissors Lizard Spock, Star Trek, The Big Bang Theory, game, nerd culture">
+  <!--Added metadata  to basic head code-->
+  <meta name="description" content="Rock Paper Scissors Lizard Spock game">
+  <meta name="keywords" content="Rock Paper Scissors Lizard Spock, Star Trek, The Big Bang Theory, game, nerd culture, nerd game">
   <meta name="author" content="Alistair Driscoll">
+  <!--links for font used-->
   <link href="assets/css/style.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <!--Website name and icon-->
   <title>Rock Paper Scissors Lizard Spock</title>
   <link rel="icon" type="image/x-icon" href="assets/images/enterprise-icon.png">
 </head>
@@ -23,8 +26,12 @@
   <br>
 
   <main class="center__column">
+
+    <!--Welcome section, the first section the user will be introduced to, explaining the game and it's rules with a button to take the user to the next section-->
     <section id="welcome-container" class="welcome__container">
       <h2>Welcome!</h2>
+
+      <!--intro paragraph-->
       <p>
         ...to Rock Paper Scissors Lizard Spock. A game where you choose
         between 5 different fighting options to best the computer. Each
@@ -33,28 +40,31 @@
         with the rules they follow are set below. May the best player win!
       </p>
       <br>
+
+      <!--part which explains things visually-->
       <h3>Here is a visual idea of how the game works:</h3>
       <img src="assets/images/RockPaperScissorsLizardSpock-bestpic.jpg" alt="Visual representation of the rules"
         class="round-corners" />
 
+        <!--final bit of the section which invites the user to begin-->
       <h3>
         When you think you're familiar with the rules, press the button below to start a game!
       </h3>
-
       <button id="start-game-btn">Start Game</button>
     </section>
 
+    <!--The game container with the different options the user can pick as buttons-->
     <section id="game-container" class="game__container hide">
-      <div id="player1-div">
+
         <h3>Take Your Go:</h3>
         <button class="choices">Rock</button>
         <button class="choices">Paper</button>
         <button class="choices">Scissors</button>
         <button class="choices">Lizard</button>
         <button class="choices">Spock</button>
-      </div>
     </section>
 
+    <!--Final container displaying player and computer choices, the outcome and if the player has won, lost or drawn-->
     <section id="results-container" class="results__container hide">
       <h3 id="results"></h3>
       <p>
@@ -67,10 +77,14 @@
       <button id="back-to-home-btn">Back to menu</button>
     </section>
   </main>
+
+  <!--Footer with creator info and link to github account-->
   <footer>
     <h3>Creator: Alistair Driscoll</h3>
     <h3>Github: https://github.com/AlistairDriscoll</h3>
   </footer>
+
+  <!--link to the javascript file used-->
   <script src="assets/js/script.js"></script>
 </body>
 

@@ -1,3 +1,4 @@
+/*Gives the font used for all text, adds repeating background image and  makes sure everything is central*/
 body {
     background-color: black;
     background-image: url("../images/space-background.png");
@@ -6,14 +7,17 @@ body {
     text-align: center;
 }
 
+/*Hide class for the different containers*/
 .hide {
     display: none;
 }
 
+/*Class to round off the corners of any elements required*/
 .round-corners {
     border-radius: 10%;
 }
 
+/*Class to make all the buttons have the same futuristic look*/
 button {
     font-size: larger;
     width: 200px;
@@ -22,6 +26,7 @@ button {
     background-color: #6855cf;
 }
 
+/*Flex class to add to the body*/
 .center__column {
     display: flex;
     flex-direction: column;
@@ -29,6 +34,8 @@ button {
     justify-content: center;
 }
 
+
+/*Makes the material look more compact and easy to view overall when using a bigger screen*/
 section {
     max-width: 750px;
 }

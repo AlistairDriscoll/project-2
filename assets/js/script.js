@@ -150,9 +150,10 @@ function compareChoices(op1, op2) {
   // puts event listeners on each option button and sends result to the game function
   for (let i = 0; i < options.length; i++) {
     function eachOption() {
-      gameFunction(i)
+      console.log("an option was clicked");
+      gameFunction(i);
     }
-      options[i].addEventListener('click', eachOption)
-      let playerMove = options[i]
+      options[i].addEventListener('click', eachOption);
+      let playerMove = options[i];
   }
 }
