@@ -1,3 +1,4 @@
+// all elements needed that will be used throughout the code
 const welcomeContainer = document.getElementById("welcome-container");
 const gameContainer = document.getElementById("game-container");
 const resultsContainer = document.getElementById("results-container");
