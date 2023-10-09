@@ -3,24 +3,25 @@ const gameContainer = document.getElementById("game-container");
 const resultsContainer = document.getElementById("results-container");
 const startGameBtn = document.getElementById("start-game-btn");
 const backToHomeBtn = document.getElementById("back-to-home-btn");
-const resultsHeader = document.getElementById("results");
 const backToGameBtn = document.getElementById("back-to-game-btn");
 const playerChoiceContainer = document.getElementById("player-choice");
 const computerChoiceContainer = document.getElementById("computer-choice");
+const announcementSpan = document.getElementById('announcement-span');
+const resultsHeader = document.getElementById("results"); 
 const options = document.getElementsByClassName("choices");
 const footer = document.getElementById("footer");
-let choices = {0: 'rock', 1: 'paper', 2: 'scissors', 3: 'lizard', 4: 'spock'}
+let choices = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Lizard', 4: 'Spock'}
 let result = "";
 let announcement = "";
 
 //displays the game section while hiding the other two sections, sets result back to empty string
 const showGame = function () {
-  console.log("button start was clicked");
   welcomeContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
   footer.classList.add("position__absolute");
   result = "";
+  announcement = "";
 };
 
 //displays home section and hides the other two sections
@@ -42,82 +43,82 @@ function compareChoices(op1, op2) {
   let announce = "";
   // analyse if results are the same
   if (op1 == op2) {
-    announce = "It's a Draw!";
-    return "draw", announce;
+    announce = "You both chose the same!";
+    return ["Draw", announce];
     // analyse if player choice is rock
-  } else if ((op1 == "rock")) {
-    if ((op2 == "paper")) {
+  } else if ((op1 == "Rock")) {
+    if ((op2 == "Paper")) {
       announce = "Paper wraps Rock!";
-      return "loss", announce;
-    } else if ((op2 == "scissors")) {
+      return ["Loss", announce];
+    } else if ((op2 == "Scissors")) {
       announce = "Rock crushes Scissors!";
-      return "win", announce;
-    } else if ((op2 == "lizard")) {
+      return ["Win", announce];
+    } else if ((op2 == "Lizard")) {
       announce = "Rock crushes Lizard!";
-      return "win", announce;
+      return ["Win", announce];
     } else {
       announce = "Spock vaporises Rock!";
-      return "loss", announce;
+      return ["Loss", announce];
     }
     // analyse if player choice is paper
-  } else if ((op1 = "paper")) {
-    if ((op2 = "rock")) {
+  } else if ((op1 = "Paper")) {
+    if ((op2 = "Rock")) {
       announce = "Paper wraps Rock!";
-      return "win", announce;
-    } else if ((op2 = "scissors")) {
+      return ["Win", announce];
+    } else if ((op2 = "Scissors")) {
       announce = "Scissors cut Paper!!";
-      return "loss", announce;
-    } else if ((op2 = "lizard")) {
+      return ["Loss", announce];
+    } else if ((op2 = "Lizard")) {
       announce = "Lizard eats Paper!";
-      return "loss", announce;
+      return ["Loss", announce];
     } else {
       announce = "Paper disproves Spock!";
-      return "win", announce;
+      return ["Win", announce];
     }
     // analyse if player choice is scissors
-  } else if ((op1 = "scissors")) {
-    if ((op2 = "rock")) {
+  } else if ((op1 = "Scissors")) {
+    if ((op2 = "Rock")) {
       announce = "Rock crushes Scissors!";
-      return "loss", announce;
-    } else if ((op2 = "paper")) {
+      return ["Loss", announce];
+    } else if ((op2 = "Paper")) {
       announce = "Scissors cut Paper!";
-      return "win", announce;
-    } else if ((op2 = "lizard")) {
+      return ["Win", announce];
+    } else if ((op2 = "Lizard")) {
       announce = "Scissors decapitate Lizard!";
-      return "win", announce;
+      return ["Win", announce];
     } else {
       announce = "Spock smashes Scissors!";
-      return "loss", announce;;
+      return ["loss", announce];
     }
     // analyse if player choice is lizard
-  } else if ((op1 = "lizard")) {
-    if ((op2 = "rock")) {
+  } else if ((op1 = "Lizard")) {
+    if ((op2 = "Rock")) {
       announce = "Rock crushes Lizard!";
-      return "loss", announce;
+      return ["Loss", announce];
     } else if ((op2 = "paper")) {
       announce = "Lizard eats Paper!";
-      return "win", announce;
+      return ["Win", announce];
     } else if ((op2 = "scissors")) {
       announce = "Scissors decapitate Lizard";
-      return "loss", announce;;
+      return ["Loss", announce];
     } else {
       announce = "Lizard poisons Spock";
-      return "win", announce;
+      return ["Win", announce];
     }
     // analyse if player choice is spock
-  } else if (op1 = 'spock') {
-    if ((op2 = "rock")) {
+  } else if (op1 = 'Spock') {
+    if ((op2 = "Rock")) {
       announce = "Spock vaporises Rock!";
-      return "win", announce;
+      return ["Win", announce];
     } else if ((op2 = "paper")) {
       announce = "Paper disproves Spock!";
-      return "loss", announce;
+      return ["Loss", announce];
     } else if ((op2 = "scissors")) {
       announce = "Spock smashes Scissors!";
-      return "win", announce;
+      return ["Win", announce];
     } else {
       announce = "Lizard poisons Spock!";
-      return "loss", announce;
+      return ["Loss", announce];
     }
   }
 }
@@ -130,24 +131,23 @@ function compareChoices(op1, op2) {
   let compMove = Math.floor (ranNum);
   let compChoice = choices[compMove];
   let playerChoice = choices[playerMove];
-  result, announcement = compareChoices(playerChoice, compChoice);
+  [result, announcement] = compareChoices(playerChoice, compChoice);
   console.log(announcement);
   console.log(result);
   resultsHeader.innerText = result;
-  gameContainer.classList.add("hide");
-  resultsContainer.classList.remove("hide");
   playerChoiceContainer.innerText = playerChoice;
   computerChoiceContainer.innerText = compChoice;
+  announcementSpan.innerText = announcement;
+  gameContainer.classList.add("hide");
+  resultsContainer.classList.remove("hide");
 }
 
   // puts event listeners on each option button and sends result to the game function
   for (let i = 0; i < options.length; i++) {
 
     function eachOption() {
-      console.log('an option was clicked');
       gameFunction(i)
     }
-
     options[i].addEventListener('click', eachOption);
   }
 
