@@ -10,6 +10,9 @@ const announcementSpan = document.getElementById('announcement-span');
 const resultsHeader = document.getElementById("results"); 
 const options = document.getElementsByClassName("choices");
 const footer = document.getElementById("footer");
+let announce = "";
+let announcement = "";
+let result = "";
 let choices = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Lizard', 4: 'Spock'}
 
 
@@ -18,9 +21,8 @@ const showGame = function () {
   welcomeContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
-  footer.classList.add("position__absolute");
-};
-
+  footer.classList.add("position__absolute"); 
+}
 //displays home section and hides the other two sections
 const showHome = function () {
   welcomeContainer.classList.remove("hide");
@@ -33,6 +35,12 @@ const showHome = function () {
 backToGameBtn.addEventListener("click", showGame);
 startGameBtn.addEventListener("click", showGame);
 backToHomeBtn.addEventListener("click", showHome);
+
+function resetGame() {
+  result = "";
+  announce = "";
+  announcement = "";
+}
 
 
 //compares all possible combinations, announces outcome and result
@@ -65,26 +73,26 @@ function compareChoices(op1, op2) {
   } else if ((op1 == "Paper")) {
 
     if ((op2 == "Rock")) {
-      announce == "Paper wraps Rock!";
+      announce = "Paper wraps Rock!";
       return ["Win", announce];
 
     } else if ((op2 == "Scissors")) {
-      announce == "Scissors cut Paper!!";
+      announce = "Scissors cut Paper!!";
       return ["Loss", announce];
 
     } else if ((op2 == "Lizard")) {
-      announce == "Lizard eats Paper!";
+      announce = "Lizard eats Paper!";
       return ["Loss", announce];
 
-    } else {
-      announce == "Paper disproves Spock!";
+    } else if (op2 == "Spock") {
+      announce = "Paper disproves Spock!";
       return ["Win", announce];
     }
     // analyse if player choice is scissors
   } else if ((op1 == "Scissors")) {
 
     if ((op2 == "Rock")) {
-      announce == "Rock crushes Scissors!";
+      announce = "Rock crushes Scissors!";
       return ["Loss", announce];
 
     } else if ((op2 == "Paper")) {
@@ -94,42 +102,47 @@ function compareChoices(op1, op2) {
     } else if ((op2 == "Lizard")) {
       announce = "Scissors decapitate Lizard!";
       return ["Win", announce];
-    } else {
-      announce == "Spock smashes Scissors!";
+
+    } else if (op2 == "Spock") {
+      announce = "Spock smashes Scissors!";
       return ["loss", announce];
     }
     // analyse if player choice is lizard
   } else if ((op1 == "Lizard")) {
 
     if ((op2 == "Rock")) {
-      announce == "Rock crushes Lizard!";
+      announce = "Rock crushes Lizard!";
       return ["Loss", announce];
 
     } else if ((op2 == "Paper")) {
-      announce == "Lizard eats Paper!";
+      announce = "Lizard eats Paper!";
       return ["Win", announce];
 
-    } else if ((op2 == "scissors")) {
-      announce == "Scissors decapitate Lizard";
+    } else if ((op2 == "Scissors")) {
+      announce = "Scissors decapitate Lizard";
       return ["Loss", announce];
 
-    } else {
-      announce == "Lizard poisons Spock";
+    } else if (op2 == "Spock") {
+      announce = "Lizard poisons Spock";
       return ["Win", announce];
     }
     // analyse if player choice is spock
   } else if (op1 == 'Spock') {
+
     if ((op2 == "Rock")) {
-      announce == "Spock vaporises Rock!";
+      announce = "Spock vaporises Rock!";
       return ["Win", announce];
-    } else if ((op2 == "paper")) {
-      announce == "Paper disproves Spock!";
+
+    } else if ((op2 == "Paper")) {
+      announce = "Paper disproves Spock!";
       return ["Loss", announce];
-    } else if ((op2 == "scissors")) {
-      announce == "Spock smashes Scissors!";
+
+    } else if ((op2 == "Scissors")) {
+      announce = "Spock smashes Scissors!";
       return ["Win", announce];
-    } else {
-      announce == "Lizard poisons Spock!";
+
+    } else if (op2 == "Lizard") {
+      announce = "Lizard poisons Spock!";
       return ["Loss", announce];
     }
   }
@@ -144,8 +157,6 @@ function compareChoices(op1, op2) {
   let compChoice = choices[compMove];
   let playerChoice = choices[playerMove];
   [result, announcement] = compareChoices(playerChoice, compChoice);
-  console.log(announcement);
-  console.log(result);
   resultsHeader.innerText = result;
   playerChoiceContainer.innerText = playerChoice;
   computerChoiceContainer.innerText = compChoice;
@@ -158,7 +169,8 @@ function compareChoices(op1, op2) {
   for (let i = 0; i < options.length; i++) {
 
     function eachOption() {
-      gameFunction(i)
+      resetGame();
+      gameFunction(i);
     }
     options[i].addEventListener('click', eachOption);
   }
