@@ -13,11 +13,7 @@ let choices = {0: 'rock', 1: 'paper', 2: 'scissors', 3: 'lizard', 4: 'spock'}
 let result = "";
 let announcement = "";
 
-/**
- * displays game section
- * hides welcome and results section
- * sets result back to empty string
- */
+//displays the game section while hiding the other two sections, sets result back to empty string
 const showGame = function () {
   console.log("button start was clicked");
   welcomeContainer.classList.add("hide");
@@ -27,11 +23,7 @@ const showGame = function () {
   result = "";
 };
 
-/**
- * displays welcome section
- * hides game and results section
- * sets result back to empty string
- */
+//displays home section and hides the other two sections
 const showHome = function () {
   welcomeContainer.classList.remove("hide");
   gameContainer.classList.add("hide");
@@ -39,31 +31,11 @@ const showHome = function () {
   footer.classList.remove('position__absolute');
 }
 
-/**
- * event listeners to show the different sections
- */
+//event listeners to call the functions that show the different sections
 backToGameBtn.addEventListener("click", showGame);
 startGameBtn.addEventListener("click", showGame);
 backToHomeBtn.addEventListener("click", showHome);
 
-/**
- *gets computer to generate number between 0-4
- *matches computer and players numbers with object to get the choices
- *puts choices to comparison function and puts the results in the correct elements html
- */
-function gameFunction(playerMove) {
-  let ranNum = Math.random() * 5;
-  let compMove = Math.floor (ranNum);
-  let compChoice = choices[compMove];
-  let playerChoice = choices[playerMove];
-  result, announcement = compareChoices(playerChoice, compChoice);
-  console.log(announcement);
-  console.log(result);
-  resultsHeader.innerText = result;
-  gameContainer.classList.add("hide");
-  resultsContainer.classList.remove("hide");
-  playerChoiceContainer.innerText = playerChoice;
-  computerChoiceContainer.innerText = compChoice;
 
 //compares all possible combinations, announces outcome and result
 function compareChoices(op1, op2) {
@@ -149,7 +121,25 @@ function compareChoices(op1, op2) {
     }
   }
 }
+
+/* gets computer to generate number between 0-4
+  matches computer and players numbers with object to get the choices
+  puts choices to comparison function and puts the results in the correct elements html*/
+  function gameFunction(playerMove) {
+  let ranNum = Math.random() * 5;
+  let compMove = Math.floor (ranNum);
+  let compChoice = choices[compMove];
+  let playerChoice = choices[playerMove];
+  result, announcement = compareChoices(playerChoice, compChoice);
+  console.log(announcement);
+  console.log(result);
+  resultsHeader.innerText = result;
+  gameContainer.classList.add("hide");
+  resultsContainer.classList.remove("hide");
+  playerChoiceContainer.innerText = playerChoice;
+  computerChoiceContainer.innerText = compChoice;
 }
+
   // puts event listeners on each option button and sends result to the game function
   for (let i = 0; i < options.length; i++) {
 
