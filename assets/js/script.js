@@ -11,8 +11,7 @@ const resultsHeader = document.getElementById("results");
 const options = document.getElementsByClassName("choices");
 const footer = document.getElementById("footer");
 let choices = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Lizard', 4: 'Spock'}
-let result = "";
-let announcement = "";
+
 
 //displays the game section while hiding the other two sections, sets result back to empty string
 const showGame = function () {
@@ -20,8 +19,6 @@ const showGame = function () {
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
   footer.classList.add("position__absolute");
-  result = "";
-  announcement = "";
 };
 
 //displays home section and hides the other two sections
@@ -40,84 +37,99 @@ backToHomeBtn.addEventListener("click", showHome);
 
 //compares all possible combinations, announces outcome and result
 function compareChoices(op1, op2) {
-  let announce = "";
+  
   // analyse if results are the same
   if (op1 == op2) {
     announce = "You both chose the same!";
     return ["Draw", announce];
+
     // analyse if player choice is rock
   } else if ((op1 == "Rock")) {
     if ((op2 == "Paper")) {
       announce = "Paper wraps Rock!";
       return ["Loss", announce];
+
     } else if ((op2 == "Scissors")) {
       announce = "Rock crushes Scissors!";
       return ["Win", announce];
+
     } else if ((op2 == "Lizard")) {
       announce = "Rock crushes Lizard!";
       return ["Win", announce];
+
     } else {
       announce = "Spock vaporises Rock!";
       return ["Loss", announce];
     }
     // analyse if player choice is paper
-  } else if ((op1 = "Paper")) {
-    if ((op2 = "Rock")) {
-      announce = "Paper wraps Rock!";
+  } else if ((op1 == "Paper")) {
+
+    if ((op2 == "Rock")) {
+      announce == "Paper wraps Rock!";
       return ["Win", announce];
-    } else if ((op2 = "Scissors")) {
-      announce = "Scissors cut Paper!!";
+
+    } else if ((op2 == "Scissors")) {
+      announce == "Scissors cut Paper!!";
       return ["Loss", announce];
-    } else if ((op2 = "Lizard")) {
-      announce = "Lizard eats Paper!";
+
+    } else if ((op2 == "Lizard")) {
+      announce == "Lizard eats Paper!";
       return ["Loss", announce];
+
     } else {
-      announce = "Paper disproves Spock!";
+      announce == "Paper disproves Spock!";
       return ["Win", announce];
     }
     // analyse if player choice is scissors
-  } else if ((op1 = "Scissors")) {
-    if ((op2 = "Rock")) {
-      announce = "Rock crushes Scissors!";
+  } else if ((op1 == "Scissors")) {
+
+    if ((op2 == "Rock")) {
+      announce == "Rock crushes Scissors!";
       return ["Loss", announce];
-    } else if ((op2 = "Paper")) {
+
+    } else if ((op2 == "Paper")) {
       announce = "Scissors cut Paper!";
       return ["Win", announce];
-    } else if ((op2 = "Lizard")) {
+
+    } else if ((op2 == "Lizard")) {
       announce = "Scissors decapitate Lizard!";
       return ["Win", announce];
     } else {
-      announce = "Spock smashes Scissors!";
+      announce == "Spock smashes Scissors!";
       return ["loss", announce];
     }
     // analyse if player choice is lizard
-  } else if ((op1 = "Lizard")) {
-    if ((op2 = "Rock")) {
-      announce = "Rock crushes Lizard!";
+  } else if ((op1 == "Lizard")) {
+
+    if ((op2 == "Rock")) {
+      announce == "Rock crushes Lizard!";
       return ["Loss", announce];
-    } else if ((op2 = "paper")) {
-      announce = "Lizard eats Paper!";
+
+    } else if ((op2 == "Paper")) {
+      announce == "Lizard eats Paper!";
       return ["Win", announce];
-    } else if ((op2 = "scissors")) {
-      announce = "Scissors decapitate Lizard";
+
+    } else if ((op2 == "scissors")) {
+      announce == "Scissors decapitate Lizard";
       return ["Loss", announce];
+
     } else {
-      announce = "Lizard poisons Spock";
+      announce == "Lizard poisons Spock";
       return ["Win", announce];
     }
     // analyse if player choice is spock
-  } else if (op1 = 'Spock') {
-    if ((op2 = "Rock")) {
-      announce = "Spock vaporises Rock!";
+  } else if (op1 == 'Spock') {
+    if ((op2 == "Rock")) {
+      announce == "Spock vaporises Rock!";
       return ["Win", announce];
-    } else if ((op2 = "paper")) {
-      announce = "Paper disproves Spock!";
+    } else if ((op2 == "paper")) {
+      announce == "Paper disproves Spock!";
       return ["Loss", announce];
-    } else if ((op2 = "scissors")) {
-      announce = "Spock smashes Scissors!";
+    } else if ((op2 == "scissors")) {
+      announce == "Spock smashes Scissors!";
       return ["Win", announce];
     } else {
-      announce = "Lizard poisons Spock!";
+      announce == "Lizard poisons Spock!";
       return ["Loss", announce];
     }
   }
