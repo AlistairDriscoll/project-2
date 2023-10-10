@@ -24,7 +24,13 @@ const showGame = function () {
   welcomeContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
-  footer.classList.add("position__absolute");
+
+  if (window.innerWidth <= 320){
+    footer.classList.remove("position__absolute");
+  } else {
+    footer.classList.add("position__absolute");
+  }
+  
 }
 //displays home section and hides the other two sections
 const showHome = function () {
@@ -164,6 +170,7 @@ function compareChoices(op1, op2) {
   playerChoiceContainer.innerText = playerChoice;
   computerChoiceContainer.innerText = compChoice;
   announcementSpan.innerText = announcement;
+  
   gameContainer.classList.add("hide");
   resultsContainer.classList.remove("hide");
 }
