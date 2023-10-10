@@ -24,7 +24,12 @@ const showGame = function () {
   welcomeContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
-  footer.classList.add("position__absolute"); 
+  if (screen.width < 400){
+    footer.classList.add("hide");
+  } else {
+    footer.classList.add("position__absolute");
+  }
+  
 }
 //displays home section and hides the other two sections
 const showHome = function () {
@@ -178,16 +183,3 @@ function compareChoices(op1, op2) {
     options[i].addEventListener('click', eachOption);
   }
 
-function smallScreen() {
-  for (let i = 0; i < sections.length; i++) {
-    sections[i].classList.remove("position__absolute");
-    sections[i].classList.add("side__border");
-    sections[i].classList.add("flex__class");
-    image.classList.add("small__width");
-    image.classList.add("side__border");
-    footer.classList.remove("for__footer")
-  }
-}
-if (window.innerWidth < 250) {
-  smallScreen();
-}

@@ -5,6 +5,7 @@ body {
     color: silver;
     font-family: "Orbitron", sans-serif;
     text-align: center;
+    justify-content: space-around;
 }
 
 /*Hide class for the different containers*/
@@ -31,7 +32,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 
@@ -41,13 +42,16 @@ section {
 }
 
 /*css for footer with added class to make sure it is always on the bottom*/
-for__footer {
+footer {
     bottom: 0;
     height: 70px;
     width: 100%;
 }
 .position__absolute {
     position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
 }
 
 .side__border {
