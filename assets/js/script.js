@@ -24,12 +24,7 @@ const showGame = function () {
   welcomeContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
-  if (screen.width < 400){
-    footer.classList.add("hide");
-  } else {
-    footer.classList.add("position__absolute");
-  }
-  
+  footer.classList.add("position__absolute");
 }
 //displays home section and hides the other two sections
 const showHome = function () {
@@ -85,7 +80,7 @@ function compareChoices(op1, op2) {
       return ["Win", announce];
 
     } else if ((op2 == "Scissors")) {
-      announce = "Scissors cut Paper!!";
+      announce = "Scissors cut Paper!";
       return ["Loss", announce];
 
     } else if ((op2 == "Lizard")) {
@@ -127,11 +122,11 @@ function compareChoices(op1, op2) {
       return ["Win", announce];
 
     } else if ((op2 == "Scissors")) {
-      announce = "Scissors decapitate Lizard";
+      announce = "Scissors decapitate Lizard!";
       return ["Loss", announce];
 
     } else if (op2 == "Spock") {
-      announce = "Lizard poisons Spock";
+      announce = "Lizard poisons Spock!";
       return ["Win", announce];
     }
     // analyse if player choice is spock

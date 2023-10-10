@@ -46,16 +46,16 @@ footer {
     bottom: 0;
     height: 70px;
     width: 100%;
+    padding-top: 80px;
+    margin-top: 80px;
+    width: 100%;
 }
 .position__absolute {
     position: absolute;
-    bottom: 0;
-    height: 70px;
-    width: 100%;
 }
 
 .side__border {
-    margin: 0px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 .flex__class {
@@ -63,9 +63,6 @@ footer {
 }
 
 .full__border {
-    margin: 10px;
+    padding: 10px;
 }
 
-.small__width {
-    width: 60%
-}
