@@ -25,7 +25,7 @@ const showGame = function () {
   gameContainer.classList.remove("hide");
   resultsContainer.classList.add("hide");
 
-  if (window.innerWidth <= 320){
+  if (window.innerWidth <= 400){
     footer.classList.remove("position__absolute");
   } else {
     footer.classList.add("position__absolute");
