@@ -48,28 +48,14 @@ footer {
     bottom: 0;
     height: 70px;
     width: 100%;
-    padding-top: 80px;
-    margin-top: 80px;
     width: 100%;
 }
 .position__absolute {
     position: absolute;
 }
 
-/*adds margins and padding to elements when required*/
-.side__border {
-    padding: 0px 20px 0px 20px;
-}
-.full__border {
-    padding: 10px;
-}
 /*to make the image resize for smaller screens*/
 img {
     max-width: 100%;
     size: auto;
-}
-
-/*flex class*/
-.flex__class {
-    display: flex;
 }
