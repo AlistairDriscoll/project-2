@@ -11,6 +11,8 @@ const announcementSpan = document.getElementById('announcement-span');
 const resultsHeader = document.getElementById("results"); 
 const options = document.getElementsByClassName("choices");
 const footer = document.getElementById("footer");
+const image = document.getElementById("rules-pic")
+let sections = document.getElementsByTagName("section")
 let announce = "";
 let announcement = "";
 let result = "";
@@ -176,3 +178,16 @@ function compareChoices(op1, op2) {
     options[i].addEventListener('click', eachOption);
   }
 
+function smallScreen() {
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].classList.remove("position__absolute");
+    sections[i].classList.add("side__border");
+    sections[i].classList.add("flex__class");
+    image.classList.add("small__width");
+    image.classList.add("side__border");
+    footer.classList.remove("for__footer")
+  }
+}
+if (window.innerWidth < 250) {
+  smallScreen();
+}

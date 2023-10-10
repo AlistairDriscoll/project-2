@@ -31,7 +31,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 
@@ -41,8 +41,9 @@ section {
 }
 
 /*css for footer with added class to make sure it is always on the bottom*/
-footer {
+for__footer {
     bottom: 0;
+    height: 70px;
     width: 100%;
 }
 .position__absolute {
@@ -55,4 +56,12 @@ footer {
 
 .flex__class {
     display: flex;
+}
+
+.full__border {
+    margin: 10px;
+}
+
+.small__width {
+    width: 60%
 }
