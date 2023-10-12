@@ -1,4 +1,4 @@
-![The main heading](assets/images/readme.pics/main-heading.png)
+![The main heading](assets/images/readme-pics/main-heading.png)
 
 # Project 2- JavaScript
 
@@ -10,7 +10,7 @@ The project is for a game of 'Rock paper scissors lizard Spock', a version of ro
 
 The website can be accessed through this [link](https://alistairdriscoll.github.io/project-2/)
 
-![Picture to check responsivity](assets/images/readme.pics/response-pic.png)
+![Picture to check responsivity](assets/images/readme-pics/response-pic.png)
 
 ## User stories
 
@@ -50,11 +50,11 @@ Therefore, the keywords in the metadata I've included the name of the game, Star
 
 The font carries on with the 'nerdy' theme, I found it by going into google fonts and typing words such as 'space', 'star trek' and 'sci-fi' until I found a font looking more futuristic. A Sci-Fi themed website would obviously be really fitting for the demographic. The background follows this theme, as I looked on the internet for just a picture of outer space. The picure I settled for was my choice as for starters it didn't have as many stars in the background as other pictures, meaning it wasnt going to be a distraction for the user, and there would be less likelihood of the stars interfering with the silver font color I had chosen. I also knew if it had less stars then there would be less chance of it being obvious that the picture is repeating itself in the background. A more keen eyed user may notice that it is repeating across the whole background but it isn't obvious enough to affect user experience in any way. One last thing to add is that with the h1 in the header, there are full stops after every word followed by the exclamation mark at the end word to replicate how people say it when playing the game, like the way both players would count down and then have their answer by the time both shout Spock! at the end, further adding a bit of fun and taking the edge off as it is a game after all.
 
-![Font picture](assets/images/readme.pics/font-pic.png)
+![Font picture](assets/images/readme-pics/font-pic.png)
 
 ### Buttons
 
-![Example of one of the buttons](assets/images/readme.pics/button-example.png)
+![Example of one of the buttons](assets/images/readme-pics/button-example.png)
 
 Lastly, the buttons are designed with the hard edges and black border etc to look like buttons on a spaceship, tieing together the whole Sci-Fi theme and making the website something a character from The Big Bang Theory themselves would like the look of.
 
@@ -66,17 +66,17 @@ The footer I just decided to add my name and github account using the same font 
 
 I did not overcomplicate the colours too much with the website. The font color is silver as it's the colour a customer would usually see in sci-fi themed websites due to it being the kind of colour someone would see on a spaceship. I then chose the blue font from a picture I didn't end up using that also described the rules, I just didn't opt to use this picture in the end as the current one looked better and was more descriptive of the hand signals that accompany each option, for if the user wants to play with a friend. The picture can be seen below. I used an eyedropper extension tool from my browser to get the exact colour as opposed to trying to replicate it.
 
-![Original game picture](assets/images/readme.pics/old-picture.gif)
+![Original game picture](assets/images/readme-pics/old-picture.gif)
 
 ## Useability
 
-![First part of the welcome section](assets/images/readme.pics/welcome-page-one.png)
-![second part of the welcome section](assets/images/readme.pics/welcome-page-two.png)
+![First part of the welcome section](assets/images/readme-pics/welcome-page-one.png)
+![second part of the welcome section](assets/images/readme-pics/welcome-page-two.png)
 
 The whole website is only one page split into three different sections that hide and show themselves when needed, taking the user along the path of the website. This saves the browser from having to load a new page whenever the user advances through the website reducing the load time massively. The welcome section can be seen above and the other two parts of the website below. A 'hide' class was created on CSS that was then used to only display what needed to be displayed, and I used javascript to add or take away this class that I added to the event listeners of the buttons that the user would click to progress through the game. The rules are explained in the first page the user sees, which comes with a small welcome message as well as a picture of how the game works, and a button to take them to the next stage of the game when they have an understanding of how things work. The next section is where the user chooses their option and the final part is where the results are announced, being announced in an h2 as either a win, lose or draw, with the player choice, computer choice and outcome underneath, so to fully explain to the user what has occured as opposed to telling them if it is a win or lose without knowing why. The user can then either return to the game for another round or go back to the first page if they want to glance at the rules again.
 
-![Game section](assets/images/readme.pics/game-page.png)
-![Results section](assets/images/readme.pics/results-page.png)
+![Game section](assets/images/readme-pics/game-page.png)
+![Results section](assets/images/readme-pics/results-page.png)
 
 ## Technologies used
 
@@ -94,7 +94,7 @@ The whole website is only one page split into three different sections that hide
 
 - I at first struggled to understand why with smaller screens would emit some of the lettering of the text without even an option to scroll, even though I had applied a flex class. This was eventually solved as I realised I hadn't set the size of the image beneath to auto, so it was never shrinking the image below it's full original size to fit the screen. This no shrinking was interacting with the rest of the content as it was staying outside of the screen size and keeping to the same width as the image.
 
-![First problem with small screens](assets/images/readme.pics/small-screen-bug-one.png)
+![First problem with small screens](assets/images/readme-pics/small-screen-bug-one.png)
 
 Solution: img {
     max-width: 100%;
@@ -103,13 +103,17 @@ Solution: img {
 
 - Secondly, I wanted the footer to be set at the bottom of the page at all times, even when there is nothing to go between the main content I would have preferred a big gap. So I set the position of the footer to be absolute. I then realised again when the screen became smaller it started to intefere with the other content and going too high up. I solved this by creating an if statement to take away the class that gives the footer absolute positioning when the screen becomes a certain size.
 
-![Second small screen bug](assets/images/readme.pics/small-screen-bug-two.png/)
+![Second small screen bug](assets/images/readme-pics/small-screen-bug-two.png/)
 
-Solution: if (window.innerWidth <= 400){
-    footer.classList.remove("position__absolute");
-  } else {
-    footer.classList.add("position__absolute");
-  }
+Solution: 
+```javascript
+if (window.innerWidth <= 400){
+  footer.classList.remove("position__absolute");
+} else {
+  footer.classList.add("position__absolute"); 
+}
+```
+
 
 - I had several problems with the code not announcing the correct results, if any results were announced at all. At first the problem was partly solved as sometimes you needed to compare results the right way by means of which symbols. I had used a very big if loop that goes through all the options the user could go through and compare it to the options the computer would have but wasn't consistent enough with the code. A few instances a == was needed instead of just a =, and it would sometimes display the wrong code as the last if loop didn't have another condition, it just had an else {} statement which meant that if something was wrong it would jut defer to this last loop even if that wasn't the right announcement. Also it would sometimes return nothing as a result or announcement as I had gotten confused as to where to put the code that would reset the announcement and results strings to empty strings. A solution was found when I made doing so a function that was called whenever a button to take the user back to the game screened was called.
 
@@ -227,21 +231,21 @@ and the solution to reset the announcement and function: function resetGame() {
 
 ### Chrome:
 
-![First page on chrome](assets/images/readme.pics/chrome-test-one.png)
-![Second page on chrome](assets/images/readme.pics/chrome-test-two.png)
-![Third page on chrome](assets/images/readme.pics/chrome-test-three.png)
+![First page on chrome](assets/images/readme-pics/chrome-test-one.png)
+![Second page on chrome](assets/images/readme-pics/chrome-test-two.png)
+![Third page on chrome](assets/images/readme-pics/chrome-test-three.png)
 
 ### Firefox
 
-![Firefox first test](assets/images/readme.pics/firefox-test-one.png)
-![firefox second test](assets/images/readme.pics/firefox-test-two.png)
-![firefox third test](assets/images/readme.pics/chrome-test-three.png)
+![Firefox first test](assets/images/readme-pics/firefox-test-one.png)
+![firefox second test](assets/images/readme-pics/firefox-test-two.png)
+![firefox third test](assets/images/readme-pics/chrome-test-three.png)
 
 ### Microsoft edge
 
-![edge first test](assets/images/readme.pics/edge-test-one.png)
-![edge second test](assets/images/readme.pics/edge-test-two.png)
-![edge third test](assets/images/readme.pics/edge-test-three.png)
+![edge first test](assets/images/readme-pics/edge-test-one.png)
+![edge second test](assets/images/readme-pics/edge-test-two.png)
+![edge third test](assets/images/readme-pics/edge-test-three.png)
 
 In summary, the website proved to be responsive on all websites.
 
@@ -249,13 +253,13 @@ In summary, the website proved to be responsive on all websites.
 
 There were a few missing semicolons that I had rectified and I had to delete two consts from the code that I didn't end up using and had forgotten about, these have since been amended. There were also warnings about pretty much every const and let that is in my code giving pretty much the same message regarding firefox which can be seen below.
 
-![Warnings picture](assets/images/readme.pics/jshint-pic.png)
+![Warnings picture](assets/images/readme-pics/jshint-pic.png)
 
 Then another warning was said about line 178 in the code, as it is bad practise to define a function within another function. I tried tampering with it to see if it would work the same with the function defined outside of the function it is within but to no avail. I will try rectify this in the future.
 
 ## Accesibility
 
-![Lighthouse score for first page](assets/images/readme.pics/lighthouse-first-page.png)
+![Lighthouse score for first page](assets/images/readme-pics/lighthouse-first-page.png)
 
 The lighthouse results proved to be more than acceptable. Although I tried applying them to the later sections it seemed to ony want to scan the first part, maybe due to the hide elements applied to the website when first accesed. But given that the colours don't change at all and the theme stays the same, it is safe to assume that the results will also be more than acceptable.
 
@@ -270,4 +274,4 @@ Sometimes I forgot to use the correct syntax when putting a message along with m
 
 ## Future improvements
 
-A few things to add in the future include a feature where the user can play against another player. I originally chose this project becuase me and my friends settle a lot of arguments (who buys the first round when we're at the pub, who takes the first go when we're playing pool, etc) with a game of rock paper scissors, so I thought a computer version would be a fun way to solve these problems from now on. I therefore wanted to implement a names system where users can enter their names, and a score system where both users are trying to become the first to get three points. I could also reference some private jokes we share together in my friend group also to add some humor to this project me and my mates could enjoy.
+A few things to add in the future include a feature where the user can play against another player. I originally chose this project becuase me and my friends settle a lot of arguments (who buys the first round when we're at the pub, who takes the first go when we're playing pool, etc) with a game of rock paper scissors, so I thought a computer version would be a fun way to solve these problems from now on. I therefore wanted to implement a names system where users can enter their names, and a score system where both users are trying to become the first to get three points. I could also reference some private jokes we share together in my friend group also to add some humor to this project me and my mates could enjoy. Another improvement would be the code in like 178 mentioned earlier, as it is bad practise to define a function within another function.

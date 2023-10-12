@@ -1,3 +1,5 @@
+/* js hint esverion: 8 */
+
 // all elements needed that will be used throughout the code
 const welcomeContainer = document.getElementById("welcome-container");
 const gameContainer = document.getElementById("game-container");
