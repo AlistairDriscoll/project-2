@@ -92,3 +92,156 @@ The whole website is only one page split into three different sections that hide
 
 # Bugs
 
+- I at first struggled to understand why with smaller screens would emit some of the lettering of the text without even an option to scroll, even though I had applied a flex class. This was eventually solved as I realised I hadn't set the size of the image beneath to auto, so it was never shrinking the image below it's full original size to fit the screen. This no shrinking was interacting with the rest of the content as it was staying outside of the screen size and keeping to the same width as the image.
+
+![First problem with small screens](assets/images/readme.pics/small-screen-bug-one.png)
+
+Solution: img {
+    max-width: 100%;
+    size: auto;
+}
+
+- Secondly, I wanted the footer to be set at the bottom of the page at all times, even when there is nothing to go between the main content I would have preferred a big gap. So I set the position of the footer to be absolute. I then realised again when the screen became smaller it started to intefere with the other content and going too high up. I solved this by creating an if statement to take away the class that gives the footer absolute positioning when the screen becomes a certain size.
+
+![Second small screen bug](assets/images/readme.pics/small-screen-bug-two.png/)
+
+Solution: if (window.innerWidth <= 400){
+    footer.classList.remove("position__absolute");
+  } else {
+    footer.classList.add("position__absolute");
+  }
+
+- I had several problems with the code not announcing the correct results, if any results were announced at all. At first the problem was partly solved as sometimes you needed to compare results the right way by means of which symbols. I had used a very big if loop that goes through all the options the user could go through and compare it to the options the computer would have but wasn't consistent enough with the code. A few instances a == was needed instead of just a =, and it would sometimes display the wrong code as the last if loop didn't have another condition, it just had an else {} statement which meant that if something was wrong it would jut defer to this last loop even if that wasn't the right announcement. Also it would sometimes return nothing as a result or announcement as I had gotten confused as to where to put the code that would reset the announcement and results strings to empty strings. A solution was found when I made doing so a function that was called whenever a button to take the user back to the game screened was called.
+
+Solution: function compareChoices(op1, op2) {
+  
+  // analyse if results are the same
+  if (op1 == op2) {
+    announce = "You both chose the same!";
+    return ["Draw", announce];
+
+    // analyse if player choice is rock
+  } else if ((op1 == "Rock")) {
+    if ((op2 == "Paper")) {
+      announce = "Paper wraps Rock!";
+      return ["Loss", announce];
+
+    } else if ((op2 == "Scissors")) {
+      announce = "Rock crushes Scissors!";
+      return ["Win", announce];
+
+    } else if ((op2 == "Lizard")) {
+      announce = "Rock crushes Lizard!";
+      return ["Win", announce];
+
+    } else {
+      announce = "Spock vaporises Rock!";
+      return ["Loss", announce];
+    }
+    // analyse if player choice is paper
+  } else if ((op1 == "Paper")) {
+
+    if ((op2 == "Rock")) {
+      announce = "Paper wraps Rock!";
+      return ["Win", announce];
+
+    } else if ((op2 == "Scissors")) {
+      announce = "Scissors cut Paper!";
+      return ["Loss", announce];
+
+    } else if ((op2 == "Lizard")) {
+      announce = "Lizard eats Paper!";
+      return ["Loss", announce];
+
+    } else if (op2 == "Spock") {
+      announce = "Paper disproves Spock!";
+      return ["Win", announce];
+    }
+    // analyse if player choice is scissors
+  } else if ((op1 == "Scissors")) {
+
+    if ((op2 == "Rock")) {
+      announce = "Rock crushes Scissors!";
+      return ["Loss", announce];
+
+    } else if ((op2 == "Paper")) {
+      announce = "Scissors cut Paper!";
+      return ["Win", announce];
+
+    } else if ((op2 == "Lizard")) {
+      announce = "Scissors decapitate Lizard!";
+      return ["Win", announce];
+
+    } else if (op2 == "Spock") {
+      announce = "Spock smashes Scissors!";
+      return ["loss", announce];
+    }
+    // analyse if player choice is lizard
+  } else if ((op1 == "Lizard")) {
+
+    if ((op2 == "Rock")) {
+      announce = "Rock crushes Lizard!";
+      return ["Loss", announce];
+
+    } else if ((op2 == "Paper")) {
+      announce = "Lizard eats Paper!";
+      return ["Win", announce];
+
+    } else if ((op2 == "Scissors")) {
+      announce = "Scissors decapitate Lizard!";
+      return ["Loss", announce];
+
+    } else if (op2 == "Spock") {
+      announce = "Lizard poisons Spock!";
+      return ["Win", announce];
+    }
+    // analyse if player choice is spock
+  } else if (op1 == 'Spock') {
+
+    if ((op2 == "Rock")) {
+      announce = "Spock vaporises Rock!";
+      return ["Win", announce];
+
+    } else if ((op2 == "Paper")) {
+      announce = "Paper disproves Spock!";
+      return ["Loss", announce];
+
+    } else if ((op2 == "Scissors")) {
+      announce = "Spock smashes Scissors!";
+      return ["Win", announce];
+
+    } else if (op2 == "Lizard") {
+      announce = "Lizard poisons Spock!";
+      return ["Loss", announce];
+    }
+  }
+}
+
+and the solution to reset the announcement and function: function resetGame() {
+  result = "";
+  announce = "";
+  announcement = "";
+}
+
+## Testing on different browsers
+
+### Chrome:
+
+![First page on chrome](assets/images/readme.pics/chrome-test-one.png)
+![Second page on chrome](assets/images/readme.pics/chrome-test-two.png)
+![Third page on chrome](assets/images/readme.pics/chrome-test-three.png)
+
+### Firefox
+
+![Firefox first test](assets/images/readme.pics/firefox-test-one.png)
+![firefox second test](assets/images/readme.pics/firefox-test-two.png)
+![firefox third test](assets/images/readme.pics/chrome-test-three.png)
+
+### Microsoft edge
+
+![edge first test](assets/images/readme.pics/edge-test-one.png)
+![edge second test](assets/images/readme.pics/edge-test-two.png)
+![edge third test](assets/images/readme.pics/edge-test-three.png)
+
+In summary, the website proved to be responsive on all websites.
+
