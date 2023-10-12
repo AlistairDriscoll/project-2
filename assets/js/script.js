@@ -11,12 +11,10 @@ const announcementSpan = document.getElementById('announcement-span');
 const resultsHeader = document.getElementById("results"); 
 const options = document.getElementsByClassName("choices");
 const footer = document.getElementById("footer");
-const image = document.getElementById("rules-pic")
-let sections = document.getElementsByTagName("section")
 let announce = "";
 let announcement = "";
 let result = "";
-let choices = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Lizard', 4: 'Spock'}
+let choices = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Lizard', 4: 'Spock'};
 
 
 //displays the game section while hiding the other two sections, sets result back to empty string
@@ -30,15 +28,14 @@ const showGame = function () {
   } else {
     footer.classList.add("position__absolute");
   }
-  
-}
+};
 //displays home section and hides the other two sections
 const showHome = function () {
   welcomeContainer.classList.remove("hide");
   gameContainer.classList.add("hide");
   resultsContainer.classList.add("hide");
   footer.classList.remove('position__absolute');
-}
+};
 
 //event listeners to call the functions that show the different sections
 backToGameBtn.addEventListener("click", showGame);
