@@ -50,6 +50,7 @@ footer {
     bottom: 0;
     height: 70px;
     width: 100%;
+    size: auto;
 }
 .position__absolute {
     position: absolute;
