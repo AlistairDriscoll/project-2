@@ -245,3 +245,29 @@ and the solution to reset the announcement and function: function resetGame() {
 
 In summary, the website proved to be responsive on all websites.
 
+## Validation
+
+There were a few missing semicolons that I had rectified and I had to delete two consts from the code that I didn't end up using and had forgotten about, these have since been amended. There were also warnings about pretty much every const and let that is in my code giving pretty much the same message regarding firefox which can be seen below.
+
+![Warnings picture](assets/images/readme.pics/jshint-pic.png)
+
+Then another warning was said about line 178 in the code, as it is bad practise to define a function within another function. I tried tampering with it to see if it would work the same with the function defined outside of the function it is within but to no avail. I will try rectify this in the future.
+
+## Accesibility
+
+![Lighthouse score for first page](assets/images/readme.pics/lighthouse-first-page.png)
+
+The lighthouse results proved to be more than acceptable. Although I tried applying them to the later sections it seemed to ony want to scan the first part, maybe due to the hide elements applied to the website when first accesed. But given that the colours don't change at all and the theme stays the same, it is safe to assume that the results will also be more than acceptable.
+
+
+## Credits
+
+Inspiration for this website has of course come from The Big Bang Theory in how it is themed and Star Trek also. I also was inspired from the game 'Among Us' which is set in a spaceship also so I definitley was inspired by that also. The Starship Enterprise icon was found on a website called iconfinder, and the background picture was a random one found on Google Images. I also have to thank my mentor Julia for the help on this project, it certainly would have been nightmarish to do without her!
+
+## mistakes
+
+Sometimes I forgot to use the correct syntax when putting a message along with my commits. I am aware that you need to always use present tense not past tense but this was done by mistake on several occasions. Using the right language is something I need to work on as a developer.
+
+## Future improvements
+
+A few things to add in the future include a feature where the user can play against another player. I originally chose this project becuase me and my friends settle a lot of arguments (who buys the first round when we're at the pub, who takes the first go when we're playing pool, etc) with a game of rock paper scissors, so I thought a computer version would be a fun way to solve these problems from now on. I therefore wanted to implement a names system where users can enter their names, and a score system where both users are trying to become the first to get three points. I could also reference some private jokes we share together in my friend group also to add some humor to this project me and my mates could enjoy.
