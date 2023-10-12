@@ -266,9 +266,13 @@ The lighthouse results proved to be more than acceptable. Although I tried apply
 
 ## Credits
 
-Inspiration for this website has of course come from The Big Bang Theory in how it is themed and Star Trek also. I also was inspired from the game 'Among Us' which is set in a spaceship also so I definitley was inspired by that also. The Starship Enterprise icon was found on a website called iconfinder, and the background picture was a random one found on Google Images. I also have to thank my mentor Julia for the help on this project, it certainly would have been nightmarish to do without her!
+-The Big Bang Theory
+-Star Trek
+-Among us, for the inspiration of the spaceship theme
+-Julia, my codeinstitute mentor who's adivce helped out massively
+-Google Images
 
-## mistakes
+## Mistakes
 
 Sometimes I forgot to use the correct syntax when putting a message along with my commits. I am aware that you need to always use present tense not past tense but this was done by mistake on several occasions. Using the right language is something I need to work on as a developer.
 
