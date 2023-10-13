@@ -1,4 +1,4 @@
-/* js hint esverion: 8 */
+/* jshint esversion: 8 */
 
 // all elements needed that will be used throughout the code
 const welcomeContainer = document.getElementById("welcome-container");
@@ -174,13 +174,13 @@ function compareChoices(op1, op2) {
   resultsContainer.classList.remove("hide");
 }
 
+function eachOption(i) {
+  resetGame();
+  gameFunction(i);
+}
+
   // puts event listeners on each option button and sends result to the game function
   for (let i = 0; i < options.length; i++) {
-
-    function eachOption() {
-      resetGame();
-      gameFunction(i);
-    }
-    options[i].addEventListener('click', eachOption);
+    options[i].addEventListener('click', eachOption(i));
   }
 

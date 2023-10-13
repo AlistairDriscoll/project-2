@@ -251,11 +251,8 @@ In summary, the website proved to be responsive on all websites.
 
 ## Validation
 
-There were a few missing semicolons that I had rectified and I had to delete two consts from the code that I didn't end up using and had forgotten about, these have since been amended. There were also warnings about pretty much every const and let that is in my code giving pretty much the same message regarding firefox which can be seen below.
+There were a few missing semicolons that I had rectified and I had to delete two consts from the code that I didn't end up using and had forgotten about, these have since been amended.
 
-![Warnings picture](assets/images/readme-pics/jshint-pic.png)
-
-Then another warning was said about line 178 in the code, as it is bad practise to define a function within another function. I tried tampering with it to see if it would work the same with the function defined outside of the function it is within but to no avail. I will try rectify this in the future.
 
 ## Accesibility
 
@@ -278,4 +275,4 @@ Sometimes I forgot to use the correct syntax when putting a message along with m
 
 ## Future improvements
 
-A few things to add in the future include a feature where the user can play against another player. I originally chose this project becuase me and my friends settle a lot of arguments (who buys the first round when we're at the pub, who takes the first go when we're playing pool, etc) with a game of rock paper scissors, so I thought a computer version would be a fun way to solve these problems from now on. I therefore wanted to implement a names system where users can enter their names, and a score system where both users are trying to become the first to get three points. I could also reference some private jokes we share together in my friend group also to add some humor to this project me and my mates could enjoy. Another improvement would be the code in like 178 mentioned earlier, as it is bad practise to define a function within another function.
+A few things to add in the future include a feature where the user can play against another player. I originally chose this project becuase me and my friends settle a lot of arguments (who buys the first round when we're at the pub, who takes the first go when we're playing pool, etc) with a game of rock paper scissors, so I thought a computer version would be a fun way to solve these problems from now on. I therefore wanted to implement a names system where users can enter their names, and a score system where both users are trying to become the first to get three points. I could also reference some private jokes we share together in my friend group also to add some humor to this project me and my mates could enjoy. A final one could be to add colouring to the announcement, so if the player lost then the 'loss' that would be on the results page could maybe be in red writing, and 'win' could be written in gold might be an idea also.
