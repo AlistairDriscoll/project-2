@@ -174,13 +174,15 @@ function compareChoices(op1, op2) {
   resultsContainer.classList.remove("hide");
 }
 
-function eachOption(i) {
+function getOptions(i) {
   resetGame();
   gameFunction(i);
 }
 
-  // puts event listeners on each option button and sends result to the game function
-  for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener('click', eachOption(i));
-  }
+// puts event listeners on each option button and sends result to the game function
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener('click', function () {
+    getOptions(i);
+  });
+}
 
