@@ -258,15 +258,22 @@ There were a few missing semicolons that I had rectified and I had to delete two
 
 ![Lighthouse score for first page](assets/images/readme-pics/lighthouse-first-page.png)
 
-The lighthouse results proved to be more than acceptable. Although I tried applying them to the later sections it seemed to ony want to scan the first part, maybe due to the hide elements applied to the website when first accesed. But given that the colours don't change at all and the theme stays the same, it is safe to assume that the results will also be more than acceptable.
+The lighthouse results proved to be more than acceptable. Although I tried applying them to the later sections it seemed to ony want to scan the first part, maybe due to the hide elements applied to the website when first accessed. But given that the colours don't change at all and the theme stays the same, it is safe to assume that the results will also be more than acceptable.
 
+## Deployment
+
+You can visit the website live using this link: https://alistairdriscoll.github.io/project-2/
+
+Alternatively, if you would like to deploy the project locally you can type the following line of code into your IDE terminal:
+
+git clone https://github.com/AlistairDriscoll/project-2.git
 
 ## Credits
 
 -The Big Bang Theory
 -Star Trek
 -Among us, for the inspiration of the spaceship theme
--Julia, my codeinstitute mentor who's adivce helped out massively
+-Julia, my codeinstitute mentor whos advice helped out massively
 -Google Images
 
 ## Mistakes
