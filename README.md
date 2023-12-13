@@ -180,7 +180,7 @@ Solution: function compareChoices(op1, op2) {
       announce = "Spock smashes Scissors!";
       return ["loss", announce];
     }
-    // analyse if player choice is lizard
+    // Analyze if player choice is Lizard
   } else if ((op1 == "Lizard")) {
 
     if ((op2 == "Rock")) {
@@ -199,7 +199,7 @@ Solution: function compareChoices(op1, op2) {
       announce = "Lizard poisons Spock!";
       return ["Win", announce];
     }
-    // analyse if player choice is spock
+    // analyze if player choice is Spock
   } else if (op1 == 'Spock') {
 
     if ((op2 == "Rock")) {
@@ -231,9 +231,9 @@ and the solution to reset the announcement and function: function resetGame() {
 
 ### Chrome:
 
-![First page on chrome](assets/images/readme-pics/chrome-test-one.png)
-![Second page on chrome](assets/images/readme-pics/chrome-test-two.png)
-![Third page on chrome](assets/images/readme-pics/chrome-test-three.png)
+![The first page on Chrome](assets/images/readme-pics/chrome-test-one.png)
+![The second page on Chrome](assets/images/readme-pics/chrome-test-two.png)
+![The third page on Chrome](assets/images/readme-pics/chrome-test-three.png)
 
 ### Firefox
 
@@ -256,15 +256,22 @@ There were a few missing semicolons that I had rectified and I had to delete two
 
 ## Accesibility
 
-![Lighthouse score for first page](assets/images/readme-pics/lighthouse-first-page.png)
+![Lighthouse score for page one](assets/images/readme-pics/lighthouse-first-page.png)
 
-The lighthouse results proved to be more than acceptable. Although I tried applying them to the later sections it seemed to ony want to scan the first part, maybe due to the hide elements applied to the website when first accessed. But given that the colours don't change at all and the theme stays the same, it is safe to assume that the results will also be more than acceptable.
+The lighthouse results proved to be more than acceptable. Although I tried applying them to the later sections it seemed to only want to scan the first part, maybe due to the 'hide' elements applied to the website when first accessed. But given that the colors don't change at all and the theme stays the same, it is safe to assume that the results will also be more than acceptable.
 
 ## Deployment
 
-You can visit the website live using this link: https://alistairdriscoll.github.io/project-2/
+The project was deployed to GitHub. To deploy a project on GitHub simply go to the repository and navigate to the settings tab.
+Once this is done click the 'Pages' button in the code and automation section on the sidebar of the webpage. In the 'Source'
+section of this page select 'deploy from a branch' under the first drop-down menu then 'main' on the one beneath it.
+Press save and the page will refresh with a detailed ribbon display to indicate the successful deployment.
 
-Alternatively, if you would like to deploy the project locally you can type the following line of code into your IDE terminal:
+To deploy locally You can visit the website live using this [link]( https://alistairdriscoll.github.io/project-2/).
+
+Or by typing https://alistairdriscoll.github.io/project-2/ into your browser.
+
+Alternatively, if you would like to deploy the project using an IDE simply type this line of code into your terminal:
 
 git clone https://github.com/AlistairDriscoll/project-2.git
 
@@ -273,7 +280,7 @@ git clone https://github.com/AlistairDriscoll/project-2.git
 -The Big Bang Theory
 -Star Trek
 -Among us, for the inspiration of the spaceship theme
--Julia, my codeinstitute mentor whos advice helped out massively
+-Julia, my codeinstitute mentor whose advice helped out massively
 -Google Images
 
 ## Mistakes
@@ -282,4 +289,4 @@ Sometimes I forgot to use the correct syntax when putting a message along with m
 
 ## Future improvements
 
-A few things to add in the future include a feature where the user can play against another player. I originally chose this project becuase me and my friends settle a lot of arguments (who buys the first round when we're at the pub, who takes the first go when we're playing pool, etc) with a game of rock paper scissors, so I thought a computer version would be a fun way to solve these problems from now on. I therefore wanted to implement a names system where users can enter their names, and a score system where both users are trying to become the first to get three points. I could also reference some private jokes we share together in my friend group also to add some humor to this project me and my mates could enjoy. A final one could be to add colouring to the announcement, so if the player lost then the 'loss' that would be on the results page could maybe be in red writing, and 'win' could be written in gold might be an idea also.
+A few things to add in the future include a feature where the user can play against another player. I originally chose this project because me and my friends settle a lot of arguments (who buys the first round when we're at the pub, who takes the first go when we're playing pool, etc) with a game of rock paper scissors, so I thought a computer version would be a fun way to solve these problems from now on. I therefore wanted to implement a names system where users can enter their names, and a score system where both users are trying to become the first to get three points. I could also reference some private jokes we share in my friend group to add some humor to this project that me and my mates could enjoy. A final one could be to add coloring to the announcement, so if the player lost then the 'loss' that would be on the results page could maybe be in red writing, and 'win' could be written in gold might be an idea also.
